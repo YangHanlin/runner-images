@@ -7,4 +7,4 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 # Use mirror
-COPY ./sources.list /etc/apt/sources.list
+COPY ./ubuntu/sources.list /etc/apt/sources.list
