@@ -1,4 +1,4 @@
-from hanlinyang/ubuntu:20.04
+FROM hanlinyang/ubuntu:20.04
 
 # Install AdoptOpenJDK 11 (from official repository) and Maven (from Ubuntu repository)
 # Maven from Ubuntu focal repository is new enough
