@@ -17,9 +17,12 @@ RUN npm config set registry https://registry.npm.taobao.org \
 # installers for Electron applications
 # https://wiki.winehq.org/Ubuntu
 RUN dpkg --add-architecture i386 \
+ && apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata \
+ && apt-get install -y software-properties-common \
  && wget -nc https://dl.winehq.org/wine-builds/winehq.key \
  && apt-key add winehq.key \
  && add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main' \
  && apt-get update \
- && apt-get install --install-recommends winehq-stable \
+ && apt-get install -y --install-recommends winehq-stable \
  && rm -rf /var/lib/apt/lists/*
